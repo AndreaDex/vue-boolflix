@@ -34,8 +34,7 @@
               <span>Lingua :</span>
               <img
                 :src="flagSource(film.original_language)"
-                alt=""
-                @error="flagErr"
+                :alt="film.original_language"
               />
             </div>
             <!-- <p >Lingua: {{film.original_language}}</p> -->
@@ -48,6 +47,13 @@
           <div class="card" v-for="show in tvShows">
             <h4>Titolo: {{show.name}}</h4>
             <small>Titolo originale: {{show.original_name}}</small>
+            <div>
+              <span>Lingua :</span>
+              <img
+                :src="flagSource(show.original_language)"
+                :alt="show.original_language"
+              />
+            </div>
             <p>Lingua: {{show.original_language}}</p>
             <p>Valutazione: {{show.vote_average}}</p>
           </div>

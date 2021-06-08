@@ -43,15 +43,9 @@ const app = new Vue({
       }
       return source;
     },
-
-    flagErr() {
-      return (this.isFlag = false);
-    },
   },
   computed: {},
-  mounted() {
-    console.log(this.isFlag);
-  },
+  mounted() {},
 });
 /*
  *
