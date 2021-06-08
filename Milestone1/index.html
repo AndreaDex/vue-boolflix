@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <nav>
+        <div id="logo">
+          <h3>Boolflix</h3>
+        </div>
+        <div id="search_bar">
+          <label for="search">Cerca per titolo</label>
+          <input type="text" name="search" id="search" v-model="query" />
+          <button @click="searchContent">Cerca</button>
+        </div>
+      </nav>
+
+      <div id="gallery">
+        <div id="card" v-for="film in cinema">
+          <h4 id="title">Titolo: {{film.title}}</h4>
+          <small id="original_title"
+            >Titolo originale: {{film.original_title}}</small
+          >
+          <p id="langguage">Lingua: {{film.original_language}}</p>
+          <p id="vote">Valutazione: {{film.vote_average}}</p>
+        </div>
+      </div>
+    </div>
     <!-- VueJs CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 
