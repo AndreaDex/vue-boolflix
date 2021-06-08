@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolflix</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <div id="logo">
+          <h3>Boolflix</h3>
+        </div>
+        <div id="search_bar">
+          <label for="search">Cerca per titolo</label>
+          <input type="text" name="search" id="search" v-model="query" />
+          <button @click="searchContent">Cerca</button>
+        </div>
+      </nav>
+
+      <div id="gallery">
+        <div id="card" v-for="film in cinema">
+          <h4 id="title">Titolo: {{film.title}}</h4>
+          <small id="original_title"
+            >Titolo originale: {{film.original_title}}</small
+          >
+          <p id="langguage">Lingua: {{film.original_language}}</p>
+          <p id="vote">Valutazione: {{film.vote_average}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- VueJs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!-- Axios CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- JS Main -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
