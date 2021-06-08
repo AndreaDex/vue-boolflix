@@ -16,7 +16,7 @@ const app = new Vue({
         .get(fullMovieUrl)
         .then((response) => {
           this.cinema = response.data.results;
-          console.log(this.cinema);
+          /* console.log(this.cinema); */
         })
         .catch((e) => {
           console.log(e);
@@ -26,7 +26,7 @@ const app = new Vue({
         .get(fullTvUrl)
         .then((response) => {
           this.tvShows = response.data.results;
-          console.log(this.tvShows);
+          /* console.log(this.tvShows); */
         })
         .catch((e) => {
           console.log(e);

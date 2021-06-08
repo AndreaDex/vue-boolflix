@@ -27,17 +27,20 @@
             <h4>Titolo: {{film.title}}</h4>
             <small>Titolo originale: {{film.original_title}}</small>
             <div>
+              <span>Lingua :</span>
+              <img
+                v-if="film.original_language === 'en'"
+                src="https://www.countryflags.io/gb/flat/16.png"
+                alt=""
+              />
               <img
                 :src=" `https://www.countryflags.io/`+film.original_language+`/flat/16.png` "
                 alt=""
+                @error=""
               />
-              <img
-                v-if="film.original_language === 'en'"
-                src="https://www.countryflags.io/gb/shiny/16.png"
-                alt=""
-              />
+              <span>{{film.original_language}}</span>
             </div>
-            <p>Lingua: {{film.original_language}}</p>
+            <!-- <p>Lingua: {{film.original_language}}</p> -->
             <p>Valutazione: {{film.vote_average}}</p>
           </div>
         </div>
