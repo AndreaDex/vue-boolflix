@@ -36,3 +36,6 @@ const app = new Vue({
   computed: {},
   mounted() {},
 });
+/*
+ *  https://www.countryflags.io/be/shiny/16.png
+ */
