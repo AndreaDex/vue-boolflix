@@ -28,7 +28,12 @@
             <small>Titolo originale: {{film.original_title}}</small>
             <div>
               <img
-                :src=" `https://www.countryflags.io/`+film.original_language+`/shiny/16.png` "
+                :src=" `https://www.countryflags.io/`+film.original_language+`/flat/16.png` "
+                alt=""
+              />
+              <img
+                v-if="film.original_language === 'en'"
+                src="https://www.countryflags.io/gb/shiny/16.png"
                 alt=""
               />
             </div>
