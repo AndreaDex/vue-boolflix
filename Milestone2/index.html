@@ -21,13 +21,27 @@
       </nav>
 
       <div id="gallery">
-        <div id="card" v-for="film in cinema">
-          <h4 id="title">Titolo: {{film.title}}</h4>
-          <small id="original_title"
-            >Titolo originale: {{film.original_title}}</small
-          >
-          <p id="langguage">Lingua: {{film.original_language}}</p>
-          <p id="vote">Valutazione: {{film.vote_average}}</p>
+        <div id="film_section">
+          <h2>Film</h2>
+          <div class="card" v-for="film in cinema">
+            <h4>Titolo: {{film.title}}</h4>
+            <small>Titolo originale: {{film.original_title}}</small>
+            <div>
+              <img src="https://www.countryflags.io/be/shiny/16.png" alt="" />
+            </div>
+            <p>Lingua: {{film.original_language}}</p>
+            <p>Valutazione: {{film.vote_average}}</p>
+          </div>
+        </div>
+
+        <div id="tv_show_section">
+          <h2>Serie Tv</h2>
+          <div class="card" v-for="show in tvShows">
+            <h4>Titolo: {{show.name}}</h4>
+            <small>Titolo originale: {{show.original_name}}</small>
+            <p>Lingua: {{show.original_language}}</p>
+            <p>Valutazione: {{show.vote_average}}</p>
+          </div>
         </div>
       </div>
     </div>
