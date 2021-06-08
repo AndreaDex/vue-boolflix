@@ -32,6 +32,16 @@ const app = new Vue({
           console.log(e);
         });
     },
+
+    flagSource(key) {
+      let source;
+      if (key === "en") {
+        source = "https://www.countryflags.io/gb/flat/16.png";
+      } else {
+        source = " `https://www.countryflags.io/`+key+`/flat/16.png` ";
+      }
+      return source;
+    },
   },
   computed: {},
   mounted() {},

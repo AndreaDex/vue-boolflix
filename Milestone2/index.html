@@ -27,7 +27,7 @@
             <h4>Titolo: {{film.title}}</h4>
             <small>Titolo originale: {{film.original_title}}</small>
             <div>
-              <span>Lingua :</span>
+              <!-- <span>Lingua :</span>
               <img
                 v-if="film.original_language === 'en'"
                 src="https://www.countryflags.io/gb/flat/16.png"
@@ -38,7 +38,9 @@
                 alt=""
                 @error=""
               />
-              <span>{{film.original_language}}</span>
+              <span>{{film.original_language}}</span> -->
+              <span>Lingua :</span>
+              <img :src="flagSource(film.original_language)" alt="" />
             </div>
             <!-- <p>Lingua: {{film.original_language}}</p> -->
             <p>Valutazione: {{film.vote_average}}</p>
