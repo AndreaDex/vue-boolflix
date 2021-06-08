@@ -7,8 +7,10 @@
     <title>Boolflix</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
   <body>
     <div id="app">
+      <!-- Nav -->
       <nav>
         <div id="logo">
           <h3>Boolflix</h3>
@@ -19,7 +21,9 @@
           <button @click="searchContent">Cerca</button>
         </div>
       </nav>
+      <!-- /Nav -->
 
+      <!-- Gallery -->
       <div id="gallery">
         <div id="film_section">
           <h2>Film</h2>
@@ -27,22 +31,14 @@
             <h4>Titolo: {{film.title}}</h4>
             <small>Titolo originale: {{film.original_title}}</small>
             <div>
-              <!-- <span>Lingua :</span>
-              <img
-                v-if="film.original_language === 'en'"
-                src="https://www.countryflags.io/gb/flat/16.png"
-                alt=""
-              />
-              <img
-                :src=" `https://www.countryflags.io/`+film.original_language+`/flat/16.png` "
-                alt=""
-                @error=""
-              />
-              <span>{{film.original_language}}</span> -->
               <span>Lingua :</span>
-              <img :src="flagSource(film.original_language)" alt="" />
+              <img
+                :src="flagSource(film.original_language)"
+                alt=""
+                @error="flagErr"
+              />
             </div>
-            <!-- <p>Lingua: {{film.original_language}}</p> -->
+            <!-- <p >Lingua: {{film.original_language}}</p> -->
             <p>Valutazione: {{film.vote_average}}</p>
           </div>
         </div>
@@ -57,6 +53,7 @@
           </div>
         </div>
       </div>
+      <!-- /Gallery -->
     </div>
     <!-- VueJs CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>

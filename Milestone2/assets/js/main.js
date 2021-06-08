@@ -21,6 +21,7 @@ const app = new Vue({
         .catch((e) => {
           console.log(e);
         });
+
       let fullTvUrl = `${this.url}${this.tvEnd}?api_key=${this.apiKey}&query=${this.query}`;
       axios
         .get(fullTvUrl)
@@ -38,14 +39,20 @@ const app = new Vue({
       if (key === "en") {
         source = "https://www.countryflags.io/gb/flat/16.png";
       } else {
-        source = " `https://www.countryflags.io/`+key+`/flat/16.png` ";
+        source = `https://www.countryflags.io/${key}/flat/16.png`;
       }
       return source;
     },
+
+    flagErr() {
+      return (this.isFlag = false);
+    },
   },
   computed: {},
-  mounted() {},
+  mounted() {
+    console.log(this.isFlag);
+  },
 });
 /*
- *  https://www.countryflags.io/be/shiny/16.png
+ *
  */
