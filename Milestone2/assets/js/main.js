@@ -47,6 +47,9 @@ const app = new Vue({
     showFlag(key) {
       return this.languageFlags.includes(key);
     },
+    rateStar(key) {
+      return Math.round(key / 2);
+    },
   },
   computed: {},
   mounted() {},

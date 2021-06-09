@@ -12,3 +12,20 @@ body {
 .card {
   margin: 1rem 0;
 }
+
+.rating {
+  position: relative;
+}
+.star_rating,
+.star_rating_current {
+  color: gold;
+  display: inline-block;
+}
+.star_rating_current {
+  position: absolute;
+  top: 0;
+  left: 38px;
+}
+.star_rating_current > i {
+  margin-right: 4px;
+}

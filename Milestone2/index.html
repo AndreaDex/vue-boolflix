@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolflix</title>
+    <!-- FontAwesme CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
@@ -29,9 +38,11 @@
         <div id="film_section">
           <h2>Film</h2>
           <div class="card" v-for="film in cinema">
+            <!-- Titolo -->
             <h4>Titolo: {{film.title}}</h4>
             <small>Titolo originale: {{film.original_title}}</small>
-            <div>
+            <!-- Lingua -->
+            <div class="languages">
               <span>Lingua :</span>
               <img
                 v-if="showFlag(film.original_language)"
@@ -40,7 +51,24 @@
               />
               <span v-else>{{film.original_language}}</span>
             </div>
-            <p>Valutazione: {{film.vote_average}}</p>
+            <!-- Valutazione -->
+            <div class="rating">
+              <span>Voto:</span>
+              <div class="star_rating">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <div class="star_rating_current">
+                <i
+                  class="fas fa-star"
+                  v-for="star in rateStar(film.vote_average)"
+                ></i>
+              </div>
+            </div>
           </div>
         </div>
         <!-- /Film -->
@@ -49,9 +77,11 @@
         <div id="tv_show_section">
           <h2>Serie Tv</h2>
           <div class="card" v-for="show in tvShows">
+            <!-- Titolo -->
             <h4>Titolo: {{show.name}}</h4>
             <small>Titolo originale: {{show.original_name}}</small>
-            <div>
+            <!-- Lingua -->
+            <div class="languages">
               <span>Lingua :</span>
               <img
                 v-if="showFlag(show.original_language)"
@@ -60,7 +90,25 @@
               />
               <span v-else>{{show.original_language}}</span>
             </div>
-            <p>Valutazione: {{show.vote_average}}</p>
+
+            <!-- Valutazione -->
+            <div class="rating">
+              <span>Voto:</span>
+              <div class="star_rating">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <div class="star_rating_current">
+                <i
+                  class="fas fa-star"
+                  v-for="star in rateStar(show.vote_average)"
+                ></i>
+              </div>
+            </div>
           </div>
         </div>
         <!-- /Serie tv -->
