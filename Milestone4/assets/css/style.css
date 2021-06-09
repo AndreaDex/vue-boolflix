@@ -1,3 +1,4 @@
+/* ** COMMON ** */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,16 +6,31 @@
 }
 
 body {
-  /*  background-color: black;
-  color: white; */
+  background-color: #141414;
+  color: white;
+  font-family: "Montserrat", sans-serif;
 }
 
+/* ** NAV ** */
+nav {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+nav img {
+  height: 50px;
+}
+
+/* ** GALLERY ** */
 .card {
-  margin: 1rem 0;
+  margin: 15px 5px;
+  width: 230px;
 }
 .poster {
-  height: 200px;
-  width: 170px;
+  height: 300px;
+  width: 230px;
 }
 .rating {
   position: relative;
@@ -31,4 +47,10 @@ body {
 }
 .star_rating_current > i {
   margin-right: 4px;
+}
+/* ** Film section ** */
+#film_section,
+#tv_show_section {
+  display: flex;
+  flex-wrap: wrap;
 }

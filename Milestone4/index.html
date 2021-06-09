@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolflix</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- FontAwesme CDN -->
     <link
       rel="stylesheet"
@@ -22,7 +28,10 @@
       <!-- Nav -->
       <nav>
         <div id="logo">
-          <h3>Boolflix</h3>
+          <img
+            src="https://fontmeme.com/permalink/210609/4937b74c6317b36c509baa13669b4b20.png"
+            alt=""
+          />
         </div>
         <div id="search_bar">
           <label for="search">Cerca per titolo</label>
@@ -35,8 +44,8 @@
       <!-- Gallery -->
       <div id="gallery">
         <!-- Film -->
+        <h2>FILM</h2>
         <div id="film_section">
-          <h2>Film</h2>
           <div class="card" v-for="film in cinema">
             <img
               class="poster"
@@ -79,8 +88,8 @@
         <!-- /Film -->
 
         <!-- Serie tv -->
+        <h2>SERIE TV</h2>
         <div id="tv_show_section">
-          <h2>Serie Tv</h2>
           <div class="card" v-for="show in tvShows">
             <img
               class="poster"
