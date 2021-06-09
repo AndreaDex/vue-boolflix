@@ -38,6 +38,11 @@
         <div id="film_section">
           <h2>Film</h2>
           <div class="card" v-for="film in cinema">
+            <img
+              class="poster"
+              :src=" imgSource(film.poster_path)"
+              alt="locandina film"
+            />
             <!-- Titolo -->
             <h4>Titolo: {{film.title}}</h4>
             <small>Titolo originale: {{film.original_title}}</small>
@@ -77,6 +82,11 @@
         <div id="tv_show_section">
           <h2>Serie Tv</h2>
           <div class="card" v-for="show in tvShows">
+            <img
+              class="poster"
+              :src=" imgSource(show.poster_path)"
+              alt="locandina show"
+            />
             <!-- Titolo -->
             <h4>Titolo: {{show.name}}</h4>
             <small>Titolo originale: {{show.original_name}}</small>
