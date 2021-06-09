@@ -34,11 +34,12 @@
             <div>
               <span>Lingua :</span>
               <img
+                v-if="showFlag(film.original_language)"
                 :src="flagSource(film.original_language)"
                 :alt="film.original_language"
               />
+              <span v-else>{{film.original_language}}</span>
             </div>
-            <!-- <p > {{film.original_language}}</p> -->
             <p>Valutazione: {{film.vote_average}}</p>
           </div>
         </div>
@@ -53,11 +54,12 @@
             <div>
               <span>Lingua :</span>
               <img
+                v-if="showFlag(show.original_language)"
                 :src="flagSource(show.original_language)"
                 :alt="show.original_language"
               />
+              <span v-else>{{show.original_language}}</span>
             </div>
-            <p>Lingua: {{show.original_language}}</p>
             <p>Valutazione: {{show.vote_average}}</p>
           </div>
         </div>

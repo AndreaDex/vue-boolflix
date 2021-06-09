@@ -8,6 +8,8 @@ const app = new Vue({
     query: "",
     cinema: null,
     tvShows: null,
+    isFlag: true,
+    languageFlags: ["it", "en", "fr", "de", "es"],
   },
   methods: {
     searchContent() {
@@ -16,7 +18,6 @@ const app = new Vue({
         .get(fullMovieUrl)
         .then((response) => {
           this.cinema = response.data.results;
-          /* console.log(this.cinema); */
         })
         .catch((e) => {
           console.log(e);
@@ -27,7 +28,6 @@ const app = new Vue({
         .get(fullTvUrl)
         .then((response) => {
           this.tvShows = response.data.results;
-          /* console.log(this.tvShows); */
         })
         .catch((e) => {
           console.log(e);
@@ -42,6 +42,10 @@ const app = new Vue({
         source = `https://www.countryflags.io/${key}/flat/16.png`;
       }
       return source;
+    },
+
+    showFlag(key) {
+      return this.languageFlags.includes(key);
     },
   },
   computed: {},
