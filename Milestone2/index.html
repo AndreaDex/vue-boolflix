@@ -25,6 +25,7 @@
 
       <!-- Gallery -->
       <div id="gallery">
+        <!-- Film -->
         <div id="film_section">
           <h2>Film</h2>
           <div class="card" v-for="film in cinema">
@@ -37,11 +38,13 @@
                 :alt="film.original_language"
               />
             </div>
-            <!-- <p >Lingua: {{film.original_language}}</p> -->
+            <!-- <p > {{film.original_language}}</p> -->
             <p>Valutazione: {{film.vote_average}}</p>
           </div>
         </div>
+        <!-- /Film -->
 
+        <!-- Serie tv -->
         <div id="tv_show_section">
           <h2>Serie Tv</h2>
           <div class="card" v-for="show in tvShows">
@@ -58,6 +61,7 @@
             <p>Valutazione: {{show.vote_average}}</p>
           </div>
         </div>
+        <!-- /Serie tv -->
       </div>
       <!-- /Gallery -->
     </div>
