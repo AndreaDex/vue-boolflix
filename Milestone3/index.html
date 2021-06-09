@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolflix</title>
+    <!-- FontAwesme CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- Nav -->
+      <nav>
+        <div id="logo">
+          <h3>Boolflix</h3>
+        </div>
+        <div id="search_bar">
+          <label for="search">Cerca per titolo</label>
+          <input type="text" name="search" id="search" v-model="query" />
+          <button @click="searchContent">Cerca</button>
+        </div>
+      </nav>
+      <!-- /Nav -->
+
+      <!-- Gallery -->
+      <div id="gallery">
+        <!-- Film -->
+        <div id="film_section">
+          <h2>Film</h2>
+          <div class="card" v-for="film in cinema">
+            <!-- Titolo -->
+            <h4>Titolo: {{film.title}}</h4>
+            <small>Titolo originale: {{film.original_title}}</small>
+            <!-- Lingua -->
+            <div class="languages">
+              <span>Lingua :</span>
+              <img
+                v-if="showFlag(film.original_language)"
+                :src="flagSource(film.original_language)"
+                :alt="film.original_language"
+              />
+              <span v-else>{{film.original_language}}</span>
+            </div>
+            <!-- Valutazione -->
+            <div class="rating">
+              <span>Voto:</span>
+              <div class="star_rating">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <div class="star_rating_current">
+                <i
+                  class="fas fa-star"
+                  v-for="star in rateStar(film.vote_average)"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Film -->
+
+        <!-- Serie tv -->
+        <div id="tv_show_section">
+          <h2>Serie Tv</h2>
+          <div class="card" v-for="show in tvShows">
+            <!-- Titolo -->
+            <h4>Titolo: {{show.name}}</h4>
+            <small>Titolo originale: {{show.original_name}}</small>
+            <!-- Lingua -->
+            <div class="languages">
+              <span>Lingua :</span>
+              <img
+                v-if="showFlag(show.original_language)"
+                :src="flagSource(show.original_language)"
+                :alt="show.original_language"
+              />
+              <span v-else>{{show.original_language}}</span>
+            </div>
+
+            <!-- Valutazione -->
+            <div class="rating">
+              <span>Voto:</span>
+              <div class="star_rating">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <div class="star_rating_current">
+                <i
+                  class="fas fa-star"
+                  v-for="star in rateStar(show.vote_average)"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Serie tv -->
+      </div>
+      <!-- /Gallery -->
+    </div>
+    <!-- VueJs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!-- Axios CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- JS Main -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
