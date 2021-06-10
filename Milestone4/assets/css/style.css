@@ -10,6 +10,9 @@ body {
   color: white;
   font-family: "Montserrat", sans-serif;
 }
+h2 {
+  padding: 10px;
+}
 
 /* ** NAV ** */
 nav {
@@ -24,13 +27,38 @@ nav img {
 }
 
 /* ** GALLERY ** */
+#film_section,
+#tv_show_section {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Card */
 .card {
   margin: 15px 5px;
   width: 230px;
+  height: 300px;
+  position: relative;
+  padding: 5px;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.card:hover .overlay {
+  display: none;
+}
+
+/* Poster */
 .poster {
   height: 300px;
   width: 230px;
+}
+/* Data */
+.data {
+  max-height: 100%;
+  overflow-y: auto;
 }
 .rating {
   position: relative;
@@ -43,14 +71,8 @@ nav img {
 .star_rating_current {
   position: absolute;
   top: 0;
-  left: 38px;
+  left: 45px;
 }
 .star_rating_current > i {
   margin-right: 4px;
-}
-/* ** Film section ** */
-#film_section,
-#tv_show_section {
-  display: flex;
-  flex-wrap: wrap;
 }

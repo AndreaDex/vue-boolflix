@@ -56,6 +56,10 @@ const app = new Vue({
       let fullUrl = url + key;
       return fullUrl;
     },
+
+    placeholderImg(event) {
+      event.target.src = "./assets/img/placeholder.png";
+    },
   },
   computed: {},
   mounted() {},
